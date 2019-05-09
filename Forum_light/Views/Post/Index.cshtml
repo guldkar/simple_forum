@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Forum_light.Models.Post>
+@{
+    ViewBag.Title = "View";
+}
+
+<ul class="list-group-flush">
+    @foreach(var post in Model)
+    {
+    <li class="list-group-item">
+        @Html.ActionLink(post.Subject, "ShowPost", new { id = post.ID })
+        @*
+        <a>@post.Subject</a>
+        <span class="badge badge-primary badge-pill">@post.ID</span>
+        *@
+    </li>
+    }
+</ul>
+

@@ -1,0 +1,32 @@
+﻿@model Forum_light.Models.Post
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "Post", FormMethod.Post))
+{
+<ul>
+    <li>
+        @Html.LabelFor(model => model.UserName)
+        @Html.EditorFor(model => model.UserName)
+    </li>
+    <li>
+        @Html.LabelFor(model => Model.Topic.TopicName)
+        @Html.EditorFor(model => Model.Topic.TopicName)
+    </li>
+    <li>
+        @Html.LabelFor(model => Model.Subject)
+        @Html.EditorFor(model => Model.Subject)
+    </li>
+    <li>
+        @Html.LabelFor(model => Model.Content)
+        @Html.EditorFor(model => Model.Content)
+    </li>
+    <li>
+        <input type="submit" value="Post" />
+    </li>
+</ul>
+    
+}

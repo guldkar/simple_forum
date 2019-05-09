@@ -1,0 +1,16 @@
+﻿@model Forum_light.Models.Comment
+@{
+    ViewBag.Title = "AddComment";
+}
+
+<h2>Add comment to @ViewBag.PostSubject</h2>
+
+@using (Html.BeginForm("AddComment", "Post", FormMethod.Post))
+{
+    @Html.Hidden("PostId", new { postId = ViewBag.PostId })
+    @Html.LabelFor(model => model.Content)
+    @Html.EditorFor(model => model.Content)
+
+    <input type="submit" value="Add comment"/>
+
+}

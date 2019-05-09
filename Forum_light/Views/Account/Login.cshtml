@@ -1,0 +1,20 @@
+﻿@model Forum_light.Models.LoginModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+{
+    <ul>
+        <li>
+            @Html.LabelFor(m => m.UserName)
+            @Html.EditorFor(m => m.UserName)
+        </li>
+        <li>
+            @Html.LabelFor(m => m.Password)
+            @Html.EditorFor(m => m.Password)
+        </li>
+    </ul>
+    <input type="submit" value="Login" />
+}

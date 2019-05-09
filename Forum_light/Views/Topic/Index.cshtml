@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Forum_light.Models.Topic>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Topics</h2>
+<div class="list-group list-group-flush">
+    @foreach(var item in Model)
+    {
+
+        @Html.ActionLink(item.TopicName, "ShowPosts", new { id = item.ID }, new { @class = "list-group-item list-group-item-action" })
+    }
+</div>
+

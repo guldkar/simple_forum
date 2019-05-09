@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Forum_light.Models.Post>
+@{
+    ViewBag.Title = "ShowPosts";
+}
+
+<h2>@ViewBag.TopicName</h2>
+@Html.ActionLink("Create post","Create","Post", new {Model.First().TopicId  }, null)
+<div class="list-group-item list-group-item-action">
+    @foreach(var post in Model)
+    {
+            @Html.ActionLink(post.Subject, "ShowPost", "Post", new { id = post.ID }, new {@class = "list-group-item list-group-item-action" })
+    }
+</div>
+

@@ -1,0 +1,12 @@
+﻿@model Forum_light.Models.Post
+@{
+    ViewBag.Title=Model.Subject;
+}
+
+<h2>@Html.DisplayNameFor(model => model.Subject) @Html.DisplayFor(model => model.Subject)</h2>
+<p>@Model.Content</p>
+
+@Html.ActionLink("Add comment", "AddComment",new { postId = Model.ID})
+@{
+    Html.RenderAction("Comments","Post" ,new { id = Model.ID });
+}
